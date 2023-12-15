@@ -34,6 +34,16 @@ namespace fizzle {
                   });
             }
 
+            /* Extracts tokens and turn them into a representation json. */
+            std::string extract_json() const {
+                  std::string result = "[\n";
+                  for (const auto &i : this->raw) {
+                        result += "\"" + ((i == "\"" || i == "\'") ? "\\" + i : i) + "\"" + ((i == this->raw.back()) ? "\n" : ",\n");
+                  }
+                  result += "]";
+                  return result;
+            }
+
             /* Extracts raw tokens. */
             std::vector<std::string> extract() const {
                   return this->raw;
