@@ -1,5 +1,4 @@
 #include "fizzle/fizzle.hpp"
-#include <fstream>
 #include <iostream>
 
 #define code "std::int32_t main() { \n"                             \

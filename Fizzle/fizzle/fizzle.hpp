@@ -38,7 +38,7 @@ namespace fizzle {
             std::string extract_json() const {
                   std::string result = "[\n";
                   for (const auto &i : this->raw) {
-                        result += "\"" + ((i == "\"" || i == "\'") ? "\\" + i : i) + "\"" + ((i == this->raw.back()) ? "\n" : ",\n");
+                        result += "\"" + ((i == "\"" || i == "\'") ? "\\" + i : i) + "\"" + ((&i == &this->raw.back()) ? "\n" : ",\n");
                   }
                   result += "]";
                   return result;
